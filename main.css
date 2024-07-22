@@ -946,6 +946,9 @@ button:hover {
 /* end Edit */
 /* start Resposive */
 @media (max-width: 767px) {
+  .Page .team {
+    padding: 100px 0px 0px;
+  }
   .button button {
     padding: 10px 30px;
   }
