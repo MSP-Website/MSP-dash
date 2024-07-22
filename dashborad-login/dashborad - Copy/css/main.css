@@ -1,0 +1,210 @@
+:root {
+    --main-background-color: #FEE9FF;
+    --main-text-color: #030303;
+    --secondary-text-color: #92929D;
+    --purple-accent: #7B1D80;
+    --section-background-color: #FCFCFC;
+    --main-bg-nav-color: #ffff;
+    --box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.15);
+    --border-bottom: 1px solid var(--main-background-color);
+    --border: 1px solid var(--secondary-text-color);
+    --main-border-radius: 12px;
+    --second-border-radius: 10px;
+    --third-border-radius: 8px;
+    --padding: 60px 104px;
+    --padding-left: 12px;
+    --padding-right: 12px;
+    --padding-all: 12px;
+    --transation: 0.4s;
+}
+
+.fa-bars-staggered,
+.fa-x {
+    color: var(--main-text-color) !important;
+}
+
+.navbar {
+    background: var(--main-bg-nav-color) !important;
+    border-bottom: var(--border-bottom);
+    box-shadow: var(--box-shadow);
+}
+
+.navbar ul li {
+    padding-left: 5px !important;
+}
+
+.navbar-nav .active a {
+    background-color: var(--purple-accent);
+    color: var(--main-bg-nav-color) !important;
+    border-radius: var(--main-border-radius);
+}
+
+.nav-item a {
+    color: var(--main-text-color) !important;
+    transition: var(--transation) !important;
+    font-size: 0.93rem !important;
+}
+
+.nav-item a:hover {
+    background-color: var(--purple-accent);
+    color: var(--main-bg-nav-color) !important;
+    border-radius: var(--main-border-radius);
+}
+
+.dropdown-menu {
+    padding: 12px !important;
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.15);
+    border-radius: var(--second-border-radius) !important;
+    background-color: var(--section-background-color) !important;
+}
+
+.dropdown-item {
+    border-radius: var(--main-border-radius);
+    border: var(--border) !important;
+    margin-bottom: 10px !important;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    transition: var(--transation) !important;
+
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background-color: rgba(123, 29, 128, 0.10) !important;
+    border: 1px solid var(--purple-accent) !important;
+    color: var(--purple-accent) !important;
+
+}
+
+.form-inline input {
+    border: 1px solid var(--purple-accent) !important;
+    outline: none !important;
+    padding: 8px !important;
+    border-radius: var(--third-border-radius) !important;
+    /* margin-bottom: 8px; */
+
+
+}
+
+.btn {
+    color: var(--purple-Accent);
+    text-align: center;
+    font-family: Cairo;
+    font-size: 16px;
+    font-weight: 400;
+    background-color: var(--navbar-color);
+    border: 1px solid var(--purple-accent) !important;
+    outline: none !important;
+    border-radius: var(--third-border-radius) !important;
+    transition: var(--transation);
+
+}
+
+.btn:hover {
+    color: var(--section-background-color);
+    background-color: var(--purple-accent);
+
+}
+
+.btn:focus {
+    background-color: var(--purple-accent) !important;
+    color: var(--section-background-color);
+    box-shadow: none !important;
+}
+
+.form-inline input:focus {
+    box-shadow: none !important;
+}
+
+::placeholder {
+    color: var(--secondary-text-color) !important;
+}
+
+.fa-search {
+    color: var(--purple-accent) !important;
+    margin-left: -30px;
+}
+
+.fa-blog,
+.fa-people-group,
+.fa-star {
+    border-radius: var(--third-border-radius) !important;
+
+    border: var(--border) !important;
+    padding: 4px !important;
+}
+
+.fa-arrow-right {
+    border: var(--border) !important;
+    border-radius: 54px !important;
+    padding: 4px !important;
+    display: none;
+}
+
+.dropdown-item:hover .fa-arrow-right {
+    display: inline;
+}
+
+/* End Nav */
+
+@media only screen and (max-width: 600px) {
+    .navbar-nav .active a {
+        margin: 10px 0px !important;
+    }
+
+    .nav-item a {
+        width: fit-content;
+        padding: 8px !important;
+    }
+
+    .dropdown-menu {
+        width: fit-content !important;
+    }
+
+    .dropdown-menu .dropdown-item {
+        width: 100% !important;
+    }
+
+
+    .btn {
+        width: 100% !important;
+    }
+}
+
+
+@media (min-width:760px) and (max-width:940px) {
+    .navbar-nav .active a {
+        margin: 10px 0px !important;
+    }
+
+    .nav-item a {
+        width: fit-content;
+        padding: 8px !important;
+    }
+
+    .dropdown-menu {
+        width: fit-content !important;
+    }
+
+    .form-inline input {
+        width: 100% !important;
+        margin-bottom: 12px !important;
+
+    }
+
+    .btn {
+        margin-bottom: 12px !important;
+        width: 100% !important;
+    }
+
+    .dropdown-menu .dropdown-item {
+        width: 100% !important;
+    }
+
+    .fa-search {
+
+        margin-top: -10px !important;
+    }
+}
+
+/* small screen */

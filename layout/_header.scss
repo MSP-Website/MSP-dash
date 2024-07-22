@@ -1,0 +1,63 @@
+main#Gallery{
+    header{
+        div.container-header{
+            text-align: center;
+            ul{
+                list-style: none;
+                display: inline-flex;
+                margin: 2rem 0;
+                border: 2px solid var(--secondary-text-color);
+                border-radius: 0.75rem;
+                justify-content: center;
+                align-items: center;
+                font-weight: 500;
+                li{
+                    border-radius: 0.5rem;
+                    padding: 1.25rem 6rem;
+                    color: var(--secondary-text-color);
+                    &:hover{
+                        background-color: var(--purple-accent);
+                        color: var(--section-background-color);
+                    }
+                    &.active{
+                        background-color: var(--purple-accent);
+                        color: var(--section-background-color);
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// --Small Device--
+@media (max-width: 767px) {
+    main#Gallery{
+        margin-top: 28%;
+        header{
+            div.container-header{
+                ul{
+                    flex-direction: column;
+                    li{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// --Tablet--
+@media (min-width: 768px) and (max-width: 991px) {
+    main#Gallery{
+        header{
+            div.container-header{
+                ul{
+                    li{
+                        padding: 0.5rem 2.5rem;
+                    }
+                }
+            }
+        }
+    }
+}

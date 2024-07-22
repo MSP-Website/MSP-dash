@@ -1,0 +1,51 @@
+#splash{
+    height: 100%;
+    width:100%;
+    background-image: -webkit-radial-gradient(30%,#7B1D80,#030303);
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.9s ease;
+    z-index: 9999999999999999999999999999;
+    opacity: 1;
+}
+#splash img{
+    width: 50%;
+    // transform: scale(0.5);
+    transition: 0.9s ease;
+    animation: alternate infinite 2s zoom;
+}
+.fade{
+    transition: 0.9s ease;
+    opacity:0 !important;
+}
+.hidden {
+    display: none !important;
+}
+@keyframes zoom {
+    from{
+        transform:scale(0.5);
+    }
+    to{
+        transform:scale(1);
+    }
+    
+}
+
+body{
+    overflow: hidden;
+    // animation: alternate infinite 7s hiden !important;
+}
+// @keyframes hiden {
+//     from{
+//         overflow: hidden;
+//     }
+//     to{
+//         overflow: auto;
+//     }
+    
+// }

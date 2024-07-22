@@ -1,0 +1,63 @@
+.center-con {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:10px;
+    padding:3vh 0 ;
+}
+.round {
+    position: relative;
+    border: 2px solid #7B1D80;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    
+}
+
+#cta{
+    top:35%;left:80%;transform:translate(-50%,-50%);
+    width:100%; cursor: pointer; position: absolute;
+}
+
+#cta .arrow{left: none;}
+.arrow {position: absolute;  width: 12px; height: 12px; }
+.segunda{margin-left: 8px;}
+.next {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+.st0{
+    fill:#7B1D80;
+}
+div#cta\ previous {
+    transform: matrix(-1, 0, 0, 1, -12, 14);
+}
+@keyframes bounceAlpha {
+  0% {opacity: 1; transform: translateX(0px) scale(1);}
+  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+  55% {opacity: 1; transform: translateX(0px) scale(1);}
+}
+
+.arrow.primera.bounceAlpha {
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+
+.round:hover .arrow{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}
+.round:hover .arrow.primera{
+    animation-name: bounceAlpha;
+    animation-duration:1.4s;
+    animation-delay:0.2s;
+    animation-iteration-count:infinite;
+    animation-timing-function:linear;
+}

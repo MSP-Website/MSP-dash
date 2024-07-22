@@ -1,0 +1,693 @@
+body {
+    font-family: 'Work Sans', sans-serif;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* بنستخدمها عشان تخلى الكلام كله يكون فى نفس الصف ويكون مظبوط */
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* Large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* start page */
+
+.Page {
+    padding-top: 30px;
+
+}
+
+.Page .team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 70px;
+}
+
+.Page .team h2 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.Page .team input {
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid #ccc;
+    width: 310px;
+    padding: 8px 35px;
+
+}
+
+.Page .team form {
+    position: relative;
+}
+
+:focus {
+    outline: none;
+}
+
+.hide:focus::-webkit-input-placeholder {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-in-out;
+}
+
+.hide:focus::-moz-placeholder {
+    opacity: 0;
+}
+
+.hide:focus:-ms-input-placeholder {
+    opacity: 0;
+}
+
+.hide:focus:-moz-placeholder {
+    opacity: 0;
+}
+
+.Page .team form i {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+@media (max-width: 767px) {
+    .team {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Page .team form {
+        margin-top: 10px;
+    }
+}
+
+/* End page team */
+
+/* start cards */
+.cards {
+    padding-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    text-align: center;
+    /* align-items: center; */
+}
+
+.card1 .image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin-bottom: 20px;
+}
+
+.card1:hover .image img {
+    box-shadow: 0px 0px 10px 0px white;
+}
+
+.cards .card-add {
+    border: 1px dashed #7B1D80;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 45px 20px;
+    width: 137px;
+}
+
+.cards .card-add h5 {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cards .card-add i {
+    margin-bottom: 20px;
+}
+
+.cards .card1 {
+    border: 1px solid #ccc;
+    outline: none;
+    border-radius: 8px;
+    padding: 20px 10px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.cards .card1:hover {
+    background-color: #7B1D80;
+    box-shadow: 0px 0px 10px 0px white;
+}
+
+.cards .card1:hover .text {
+    color: white;
+}
+
+.cards .card1 .icon {
+    display: flex;
+}
+
+.cards .card1 .text h5 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.cards .card1 .text p {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+
+.cards .card1 .text .delet {
+    color: #5d0961;
+    margin-bottom: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+
+.cards .card1:hover .text .delet {
+    color: white;
+}
+
+.cards .card1 .text .icon p {
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.cards .card1:hover .text .icon p {
+    color: #AAAAAA;
+}
+
+.cards .card1 .text .icon {
+    transition: 0.5s;
+    text-align: center;
+    .fa-pen{
+        color: #030303 !important;
+        margin: 3px 5px 0px;
+    }
+}
+
+.cards .card1 .text .icon:hover {
+    color: #5d0961;
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15);
+}
+
+.cards .card1 .text .icon i:hover {
+    color: #5d0961;
+}
+
+.card1:focus {
+    outline: none;
+}
+
+/* End cards */
+
+/* start content3 */
+
+.content3 {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content3 div {
+    border-radius: 8px;
+    border: 1px solid var(--Black, #030303);
+
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.15);
+    margin: 7px;
+    padding: 10px;
+
+    transition: 0.5s;
+}
+
+.content3 div:hover .fa-angles-left {
+    animation: move-row 0.8s linear infinite;
+}
+
+.content3 div:hover .fa-angles-right {
+    animation: move-row-right 0.8s linear infinite;
+
+}
+
+@keyframes move-row {
+    100% {
+        transform: translateX(-8px);
+    }
+}
+
+@keyframes move-row-right {
+    100% {
+        transform: translateX(8px);
+    }
+}
+
+
+.row1,
+.row2 {
+    display: flex;
+    padding: 10px;
+    text-align: center;
+}
+
+/* end content3 */
+
+/* form inputs */
+
+.inputs {
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    background-color: white;
+    width: 100%;
+    /* max-width: 600px;  */
+    position: relative;
+
+}
+
+.inputs form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputs form input {
+    width: 100%;
+    max-width: 390px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid grey;
+    margin: 10px;
+}
+
+.together {
+    display: flex;
+    gap: 10px;
+}
+
+.custom {
+    background-color: #eee;
+    width: 600px;
+    border: 1px solid #ccc;
+    height: 60px;
+    position: relative;
+    z-index: 1;
+    border: 1px solid grey;
+    background-color: white;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.custom input[type="file"] {
+    /* width: 100%; */
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    cursor: pointer;
+}
+
+.custom span {
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+
+}
+
+.custom:after {
+    content: "Upload";
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    line-height: 40px;
+    text-align: center;
+    background-color: #7B1D80;
+    color: white;
+    border: 1px solid #7B1D80;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-right: 10px;
+
+}
+
+.custom .label {
+    display: flex;
+    gap: 7px;
+    padding: 20px 0 0 20px;
+}
+
+.custom .label {
+    font-weight: bold;
+
+}
+
+.card-add i {
+    cursor: pointer;
+}
+
+form textarea {
+    width: 818px;
+    width: 100%;
+    padding: 20px;
+    height: 150px;
+    border: 1px solid grey;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: grey;
+    outline: none;
+    resize: none;
+}
+
+
+/*buttons forms  */
+.button button {
+    background-color: white;
+    border: 1px solid #7B1D80;
+    border-radius: 7px;
+    padding: 13px 35px;
+    color: #7B1D80;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.15);
+}
+
+button:hover {
+    background-color: #7B1D80;
+    color: white;
+}
+
+.input {
+    position: absolute;
+
+}
+
+/* add button */
+.ADD {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 25px;
+    padding-bottom: 30px;
+}
+
+.ADD .exit {
+    background-color: #FEE9FF;
+    padding: 4px 8px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    border: 1px solid #ccc;
+    transition: 0.5s;
+}
+
+.exit:hover {
+    background-color: #7B1D80;
+    color: white;
+}
+
+/* End Add team */
+
+/* Start Edit */
+.input {
+    border-radius: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    width: 100%;
+    /* max-width: 600px;  */
+    position: relative;
+}
+
+.input form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.input form input {
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid grey;
+    margin: 10px;
+    width: 100%;
+    max-width: 390px;
+    padding: 15px 10px;
+}
+
+.input .button {
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.button {
+    text-align: center;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+
+
+
+/* add blur in page */
+.container#blur.active {
+    filter: blur(5px) brightness(0.7);
+}
+
+
+#popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 850px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 19px;
+
+
+}
+
+#popup.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transform: 0.5s;
+}
+
+/* End ADD */
+
+/*  start edit */
+#popupp {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 850px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
+    background: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+    border-radius: 19px;
+
+}
+
+#popupp.active {
+    top: 50%;
+    visibility: visible;
+    opacity: 1;
+    transform: 0.5s;
+}
+
+/* end Edit */
+
+
+/* start Resposive */
+@media (max-width: 767px) {
+    .button button {
+        padding: 10px 30px;
+    }
+
+    #popup,
+    #popupp {
+        width: 380px;
+        transform: translate(-50%, -50%) scale(0.6);
+    }
+
+    .inputs form input,
+    .input form input {
+        width: 100%;
+    }
+
+    .custom {
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .together {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .cards .card-add {
+        height: 300px;
+    }
+}
+
+/*  */
+
+@media (width: 768px) {
+    .button button {
+        padding: 10px 30px;
+    }
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+}
+
+@media (width: 1024px) {
+
+    .button button {
+        padding: 10px 30px;
+    }
+
+    .inputs form input,
+    .input form input {
+        padding: 10px 10px;
+    }
+
+}
+
+@media(min-width: 820px) and (max-width: 1180px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+}
+
+@media(min-width: 853px) and (max-height: 1280px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.88);
+    }
+
+}
+
+
+@media(width: 412px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+}
+
+@media(width: 414px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.88);
+    }
+
+}
+
+@media(width:344px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+}
+
+@media(width:390px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+
+}
+
+@media(width:430px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.99);
+    }
+
+}
+
+@media(width:360px) {
+
+    #popup,
+    #popupp {
+        transform: translate(-50%, -50%) scale(0.77);
+    }
+
+}
+
+
+/* end blur */

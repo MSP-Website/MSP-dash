@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    text-transform: none;
+    transition: 0.7s ease !important;
+    cursor: url(./assests/./mouse-auto0.png) 1 1, auto !important;
+}
+body{
+    background-color: var(--section-background-color);
+    line-height: normal !important;
+}
+:root {
+    --main-background-color: #FEE9FF;
+    --main-text-color: #030303;
+    --secondary-text-color: #92929D;
+    --purple-accent: #7B1D80;
+    --section-background-color: #FCFCFC;
+    --main-bg-nav-color: #ffff;
+    --box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.15);
+    --border-bottom: 1px solid var(--main-background-color);
+    --border: 1px solid var(--secondary-text-color);
+    --main-border-radius: 12px;
+    --second-border-radius: 10px;
+    --third-border-radius: 8px;
+    --padding: 60px 104px;
+    --padding-left: 12px;
+    --padding-right: 12px;
+    --padding-all: 12px;
+    --transation: 0.4s;
+}
+
+.scroll-top{
+    height: 100%;
+    width:7px;
+    background-color: var(--purple-accent);
+    scale: 1 0;
+    position: fixed;
+    right: 0;
+    z-index: 999;
+    transform-origin: top;
+    animation:scroll-moving linear ;
+    animation-timeline: scroll();
+    box-shadow: 0px 0px 20px 0px var(--purple-accent);
+}
+
+@keyframes scroll-moving {
+    to{scale:1;}
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .scroll-top{
+    height: 7px;
+    width:100%;
+    scale: 0 1;
+    top: 0;
+    transform-origin: left;
+}
+}
+
+::selection{
+    background-color: var(--purple-accent) !important;
+    color: var(--main-background-color) !important;
+}
+img{
+    user-select: none;
+    -moz-user-select: none;
+-webkit-user-select: none;
+-ms-user-select: none;
+}
+
+.skeleton img{
+    animation: skeleton-loading 1s infinite linear alternate;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- title Of Website -->
+    <title>Login</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="images/MSP Black Logo 2.png" type="image/x-icon">
+    <!-- font's Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Castoro&family=Fredericka+the+Great&family=Inclusive+Sans&family=Lobster&family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Oxygen:wght@300;400;700&family=Poppins:wght@100;200;300;400;600;700;800;900&family=Princess+Sofia&family=Roboto+Condensed:wght@100;200&family=Roboto:wght@100;300;400;500;700;900&family=Rubik+Broken+Fax&family=Rubik+Lines&family=Rubik:wght@300;400;500;600;700;800;900&family=STIX+Two+Text:wght@400;500;600;700&family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/306f44334f.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <main>
+        <form id="form">
+            <div>
+                <h1>Login to <span>MSP Dashboard</span></h1>
+                <p>Welcome back! Please log in to access your account.</p>
+            </div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="Enter you Email" required>
+            <label for="psword">Password</label>
+            <input id="psw" type="password" name="psword" placeholder="Enter you Password" required>
+            <div>
+                <input type="checkbox" name="remember-me">
+                <label for="remember-me">Remember Me</label>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        <img src="./images/Image.png" alt="">
+    </main>
+    <!-- Bootstrap JS -->
+    <script src="js/cdnjs.cloudflare.com_ajax_libs_popper.js_1.11.0_umd_popper.min.js"></script>
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <!-- Main JS -->
+    <script src="js/index.js"></script>
+    <script>
+        const form = document.getElementById('form');
+        const email = document.getElementById('email');
+        const password = document.getElementById('psw');
+        const myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        const raw = JSON.stringify({
+            "email": "msp.alazhar@gmail.com",
+            "password": "webDash#24"
+        });
+
+        const requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow"
+        };
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+            fetch("http://24.199.127.212:3000/admin/login", requestOptions)
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log(data[0].token);
+                    console.log(data.user[0]);
+                    if (data.user[0].email == email.value && data.user[0].password == password.value) {
+                        window.location.href = "../../index.html";
+                        
+                    } else {
+                        alert("Error Password or Username");
+                    }
+                })
+                .catch((error) => console.error(error));
+        })
+    </script>
+</body>
+
+</html>
