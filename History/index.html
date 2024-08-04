@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <!-- Attaching Main CSS File -->
+    <link rel="stylesheet" href="../main.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body style="overflow: scroll;">
+    <nav>
+        <div class="container-nav">
+            <ul>
+                <li><img src="../assests/MSP-Black-Logo.webp" width="209" alt="MSP Logo">
+
+                    <i class="fa-solid fa-bars"></i>
+                </li>
+
+                <li class="item  "><a href="../Team/index.html">Team</a></li>
+
+                <li class="item "><a href="../Gallery/index.html">Gallary</a></li>
+
+                <li class="item"><a href="../Blog/index.html">Blog</a></li>
+
+                <li class="item active"><a href="../History/index.html">History of Team</a></li>
+
+                <li class="item "><a href="../Sponsor/index.html">Our main Sponsors</a></li>
+
+                <li class="arabic-lang-btn">اللغة العربية</li>
+                <li><i class="fa-solid fa-xmark"></i></li>
+            </ul>
+        </div>
+    </nav>
+    <main id="IS" >
+        <div class="Page" id="homepage">
+            <div class="container" id="blur">
+                <div class="team">
+                    <h2>History of Team</h2>
+                    <form>
+                        <i class="fa-solid fa-magnifying-glass" style="color: #111212;"></i>
+
+                        <input class="hide" type="text" placeholder="Search Name" onclick="getSearch(this.id)"
+                            id="searchName" onkeyup="searchData(this.value)">
+                    </form>
+                </div>
+                <!-- start cards -->
+                <div class="cards">
+                    <div class="card-add" id="searchButton">
+                        <i id="magnifying-glass" class="fa-solid fa-plus" style="color: #080808;"
+                            onclick="toggle()"></i>
+                        <h5>Add New dish</h5>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+
+                                <div class="icon" onclick="EditToggle()">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle() ">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle()">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="card1">
+                        <div class="image">
+                            <img src="../assests/1.jpg" alt="image.history">
+                            <div class="text">
+                                <p>Ahmed Hossam</p>
+                                <p>Mohammed</p>
+                                <p class="delet">Delete</p>
+                                <div class="icon" onclick="EditToggle()">
+                                    <i class="fa-solid fa-pen" style="color: #000000;"></i>
+                                    <p>Edit Profile</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End cards -->
+
+                <!-- content3 -->
+                <div class="content3">
+                    <div class="row1" id="previousteam">
+                        <i class="fa-solid fa-angles-left" style="color: #7b1d80;"></i>
+                    </div>
+                    <div class="row2" id="nextteam">
+                        <i class="fa-solid fa-angles-right" style="color: #7b1d80;"></i>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        </div>
+
+        <!-- start Add team -->
+
+        <div class="inputs" id="myDiv">
+            <div class="container" id="popup">
+                <div class="ADD">
+                    <h2>Add</h2>
+                    <button class="exit" onclick="toggle()">X</button>
+
+                </div>
+                <form>
+                    <input type="text" placeholder="Name-*" id="text" required>
+                    <input type="tel" placeholder="Phone Number" id="phone" required>
+                    <input type="text" placeholder="Track With Position-*" id="track" required>
+
+                    <input type="url" placeholder="Linkedin-*" id="link" required>
+
+                    <input type="url" placeholder="Facebook-*" id="face" required>
+
+                    <input type="url" placeholder="Behance or Githup-" id="git" required>
+
+                    <div class="together">
+                        <input type="url" placeholder="Linktree-" id="linktree" required>
+
+                        <div class="custom">
+                            <div class="label" for="image-upload">
+                                <i class="fa-solid fa-link" style="color: #0a0a0a;"></i>
+                                <span id="txtFile"> Upload Image-*</span>
+                            </div>
+                            <input type="file" name="" id="image-upload">
+                        </div>
+                    </div>
+                    <textarea id="textarea">Descripition</textarea>
+                </form>
+                <div class="button">
+                    <button id="cancel" onclick="toggle()">Cancel</button>
+                    <button id="add">Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!--Start Edit -->
+
+
+        <div class="input">
+            <div class="container" id="popupp">
+                <div class="ADD">
+                    <h2>Edit</h2>
+                    <button class="exit" onclick="EditToggle()">X</button>
+                </div>
+                <form>
+                    <input type="text" placeholder="Name-*" id="textt" required>
+                    <input type="tel" placeholder="Phone Number" id="phonee" required>
+                    <input type="text" placeholder="Track With Position-*" id="trackk" required>
+                    <input type="url" placeholder="Linkedin-*" id="linkk" required>
+
+                    <input type="url" placeholder="Facebook-*" id="facee" required>
+
+                    <input type="url" placeholder="Behance or Githup-" id="gitt" required>
+                    <div class="together">
+                        <input type="url" placeholder="Linktree-" id="linktreee" required>
+
+
+
+                        <div class="custom">
+                            <div class="label" for="image-upload-Edit">
+                                <i class="fa-solid fa-link" style="color: #0a0a0a;"></i>
+                                <span id="txtFile-Edit"> Upload Image-*</span>
+                            </div>
+                            <input type="file" name="" id="image-upload-Edit">
+
+                        </div>
+                    </div>
+                    <textarea id="textareaa">Descripition</textarea>
+                </form>
+                <div class="button">
+                    <button id="out" onclick="EditToggle() ">Cancel</button>
+                    <button id="addd">Add</button>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    <script src="https://kit.fontawesome.com/9e1cfffd14.js" crossorigin="anonymous"></script>
+
+    <script src="./script.js"></script>
+</body>

@@ -1145,22 +1145,33 @@ nav .container-nav ul .active {
   background-color: var(--purple-accent);
   color: var(--main-bg-nav-color);
 }
+nav .container-nav ul .active a {
+  color: var(--main-bg-nav-color);
+}
 nav .container-nav ul li {
   border-radius: 8px;
   padding: 0.5vh 1vh;
   transition: 0.5s;
   cursor: pointer;
 }
-nav .container-nav ul li .fa-bars, nav .container-nav ul li .fa-xmark {
+nav .container-nav ul li .fa-bars,
+nav .container-nav ul li .fa-xmark {
   display: none;
 }
 nav .container-nav ul li:hover {
   background-color: var(--purple-accent);
   border-radius: 8px;
-  color: var(--main-bg-nav-color);
+  color: var(--main-bg-nav-color) !important;
 }
 nav .container-nav ul li:first-child:hover {
   background-color: transparent !important;
+}
+nav .container-nav ul li a {
+  color: black;
+  text-decoration: none;
+}
+nav .container-nav ul li a:hover {
+  color: var(--main-bg-nav-color);
 }
 nav .container-nav ul .arabic-lang-btn {
   color: var(--purple-accent) !important;
