@@ -895,10 +895,6 @@ button:hover {
 }
 
 /* add blur in page */
-.container#blur.active {
-  filter: blur(5px) brightness(0.7);
-}
-
 #popup {
   position: fixed;
   top: 50%;
@@ -1049,7 +1045,6 @@ button:hover {
   font-family: "Poppins", sans-serif;
   text-transform: none;
   transition: 0.7s ease !important;
-  cursor: url(./assests/./mouse-auto0.png) 1 1, auto !important;
 }
 
 body {
