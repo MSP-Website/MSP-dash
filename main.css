@@ -68,6 +68,7 @@ section .container-images div {
   height: 15.575vh;
 }
 section .container-images div.btn-add-img {
+  cursor: pointer !important;
   font-weight: 600;
   border: 1px dotted var(--purple-accent);
 }
@@ -113,6 +114,40 @@ section .container-images div .conatiner-img span {
   font-weight: 600;
   backdrop-filter: blur(13px);
   background-color: rgba(123, 29, 128, 0.2588235294);
+}
+section .container-images div .conatiner-img span:hover {
+  cursor: pointer !important;
+}
+section .container-images div .conatiner-img span.edit-icon {
+  cursor: pointer;
+  width: 20px;
+  width: 34px;
+  top: 0px;
+  opacity: 0;
+  right: 0px;
+  border-radius: 2px;
+  z-index: 8;
+  bottom: auto;
+}
+section .container-images div .conatiner-img span.edit-icon img {
+  filter: brightness(1) !important;
+  cursor: pointer !important;
+  width: 9px;
+}
+section .container-images div .conatiner-img span.zoom-icon {
+  width: 34px;
+  top: 0px;
+  opacity: 0;
+  cursor: pointer;
+  left: 0px;
+  border-radius: 2px;
+  z-index: 8;
+  bottom: auto;
+}
+section .container-images div .conatiner-img span.zoom-icon img {
+  filter: brightness(1) !important;
+  cursor: pointer !important;
+  width: 9px;
 }
 section .container-images div .conatiner-img:hover span {
   opacity: 1;
@@ -222,6 +257,7 @@ section .container-images div .conatiner-img:hover img {
 }
 
 .popUp-gallery {
+  z-index: 9;
   width: 100%;
   height: 100%;
   top: 0;
@@ -439,6 +475,7 @@ body {
 
 /* بنستخدمها عشان تخلى الكلام كله يكون فى نفس الصف ويكون مظبوط */
 .container {
+  width: 100%;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
@@ -472,7 +509,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 70px;
 }
 
 .Page .team h2 {
@@ -534,7 +570,7 @@ body {
 /* End page team */
 /* start cards */
 .cards {
-  padding-top: 50px;
+  padding-top: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -595,6 +631,7 @@ body {
 
 .cards .card1 .icon {
   display: flex;
+  justify-content: center;
 }
 
 .cards .card1 .text h5 {
@@ -899,7 +936,6 @@ button:hover {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 850px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
   background: #fff;
@@ -914,6 +950,7 @@ button:hover {
   visibility: visible;
   opacity: 1;
   transform: 0.5s;
+  transform: scale(0.8) translate(-62%, -62%);
 }
 
 /* End ADD */
@@ -922,7 +959,6 @@ button:hover {
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 850px;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
   background: #fff;
@@ -937,6 +973,7 @@ button:hover {
   visibility: visible;
   opacity: 1;
   transform: 0.5s;
+  transform: scale(0.8) translate(-62%, -62%);
 }
 
 /* end Edit */
@@ -1038,6 +1075,106 @@ button:hover {
   }
 }
 /* end blur */
+#sponsors .cards {
+  padding-top: 20px;
+  gap: 29px;
+  justify-content: center;
+  display: grid !important;
+  grid-template-columns: repeat(8, 1fr) !important;
+  justify-items: center;
+  align-items: center;
+}
+#sponsors .cards .card1 {
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 100px;
+  padding: 0PX;
+  margin: 0PX;
+  width: fit-content;
+}
+#sponsors .cards .card1 .image {
+  position: relative;
+}
+#sponsors .cards .card1 .image img {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+#sponsors .cards .card1 .image .delete {
+  position: absolute;
+  content: "Delete";
+  width: 100%;
+  transition: 0.7s;
+  z-index: 2;
+  opacity: 0;
+  text-align: center;
+  padding: 5px;
+  color: #ffffff;
+  text-shadow: 0px 0px 9px gray;
+  bottom: 27px;
+  font-weight: 600;
+  border-radius: 8px;
+  backdrop-filter: blur(13px);
+  background-color: rgba(123, 29, 128, 0.2588235294);
+}
+#sponsors .cards .card1:hover .image img {
+  box-shadow: none;
+}
+#sponsors .cards .card1:hover {
+  background-color: transparent;
+  box-shadow: none;
+}
+#sponsors .cards .card1:hover .image .delete {
+  cursor: pointer !important;
+  opacity: 2;
+}
+#sponsors .cards .card-add {
+  border: 1px solid #ccc;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 100px;
+  padding: 0PX;
+  margin: 0PX;
+  width: fit-content;
+}
+#sponsors .cards .card-add i {
+  margin-bottom: 8px;
+}
+#sponsors .active {
+  display: block !important;
+}
+#sponsors #popup {
+  display: none;
+}
+#sponsors #blur.active {
+  filter: blur(5px);
+}
+#sponsors .ADD {
+  width: 87%;
+  display: flex;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+#sponsors .Page .team {
+  padding: 0px;
+}
+
+.blogs {
+  padding: 0px !important;
+}
+
+.card-add {
+  padding: 0px !important;
+}
+
+.cards {
+  justify-content: flex-start !important;
+}
+
 * {
   margin: 0;
   padding: 0;

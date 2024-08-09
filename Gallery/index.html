@@ -8,6 +8,8 @@
     <!-- Attaching Main CSS File -->
     <link rel="stylesheet" href="../main.css">
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <link href="../lightbox2-dev/dist/css/lightbox.min.css" rel="stylesheet" /> -->
+    <link href="../layout/lightbox.min.css" rel="stylesheet" />
 </head>
 
 <body style="overflow: scroll;">
@@ -36,8 +38,8 @@
     </nav>
     <main id="Gallery">
         <header>
-            <div class="container-header">
-                <ul>
+            <div class="container-header ">
+                <ul class="types-gallery">
                     <li class="active">All</li>
                     <li>Events</li>
                     <li>Sessions</li>
@@ -47,103 +49,6 @@
         <section>
             <h1>Gallary</h1>
             <div class="container-images">
-                <div class="btn-add-img">
-                    <div>
-                        <span>+</span>
-                        <p>Add new dish</p>
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
-                <div class="p-con-img">
-                    <div class="conatiner-img">
-                        <span onclick="console.log('hello world');">Delete</span>
-                        <img src="../assests/wallpaperflare.com.jpg" alt="">
-                    </div>
-                </div>
             </div>
         </section>
         <!--Start Buttons Next And Previous-->
@@ -202,7 +107,7 @@
         <div class="popUp-gallery">
             <div class="form">
                 <div class="title-popUp">
-                    <span>Add</span>
+                    <span id="addOrEdit">Add</span>
                     <i class="fa-solid fa-x" onclick="closepopup()"></i>
                 </div>
                 <div class="inputs-form">
@@ -230,17 +135,23 @@
                             </svg>
                             <span id="txtFile">Upload Image-*</span>
                             <button>Upload</button>
-                            <input type="file" id="image-upload">
+                            <input type="file" id="image-upload" accept="image/*">
                         </div>
                     </form>
                 </div>
                 <div class="btns-add-del">
                     <button id="closePopup" onclick="closepopup()">Cancel</button>
-                    <button>Add</button>
+                    <button id="addBtn" onclick="
+                    document.querySelector('#addBtn').innerHTML == 'Add' ?
+                    postGallery() : apiEdit();
+                    closepopup();">Add</button>
                 </div>
             </div>
         </div>
 
     </main>
+    <script src="https://kit.fontawesome.com/9e1cfffd14.js" crossorigin="anonymous"></script>
     <script src="./script.js"></script>
+    <script src="./lightbox-plus-jquery.js"></script>
+    <!-- <script src="../lightbox2-dev/dist/js/lightbox-plus-jquery.js"></script> -->
 </body>

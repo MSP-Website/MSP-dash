@@ -1,0 +1,120 @@
+@use './popUp-gallery';
+#sponsors {
+    .cards {
+        padding-top: 20px;
+        gap: 29px;
+        justify-content: center;
+        display: grid !important;
+        grid-template-columns: repeat(8, 1fr) !important;
+        justify-items: center;
+        align-items: center;
+
+        .card1 {
+            border: 1px solid #ccc;
+            outline: none;
+            border-radius: 8px;
+            cursor: pointer;
+            height: 100px;
+            padding: 0PX;
+            margin: 0PX;
+            width: fit-content;
+
+            .image {
+                position: relative;
+
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 8px;
+                    margin-bottom: 20px;
+                }
+
+                .delete {
+                    position: absolute;
+                    content: "Delete";
+                    width: 100%;
+                    transition: 0.7s;
+                    z-index: 2;
+                    opacity: 0;
+                    text-align: center;
+                    padding: 5px;
+                    color: #ffffff;
+                    text-shadow: 0px 0px 9px gray;
+                    bottom: 27px;
+                    font-weight: 600;
+                    border-radius: 8px;
+                    backdrop-filter: blur(13px);
+                    background-color: #7b1d8042;     
+                    // &:hover {
+                    //     cursor: pointer !important;
+                    //     opacity: 2;
+                    // }
+                }
+
+            }
+
+            &:hover .image img {
+                box-shadow: none;
+            }
+
+            &:hover {
+                background-color: transparent;
+                box-shadow: none;
+            }
+            &:hover .image .delete{
+                cursor: pointer !important;
+                opacity: 2;
+            }
+        }
+
+        .card-add {
+            border: 1px solid #ccc;
+            outline: none;
+            border-radius: 8px;
+            cursor: pointer;
+            height: 100px;
+            padding: 0PX;
+            margin: 0PX;
+            width: fit-content;
+
+            i {
+                margin-bottom: 8px;
+
+            }
+        }
+    }
+
+    .active {
+        display: block !important;
+    }
+
+    #popup {
+        display: none;
+    }
+
+    #blur.active {
+        filter: blur(5px);
+    }
+
+    // #popup.active {
+    //     top: 50%;
+    //     visibility: visible;
+    //     opacity: 1;
+    //     transform: 0.5s;
+    //     width: 82%;
+    //     height: 44%;
+    // }
+
+    .ADD {
+        width: 87%;
+        display: flex;
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .Page {
+        .team {
+            padding: 0px;
+        }
+    }
+}

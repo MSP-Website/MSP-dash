@@ -23,7 +23,7 @@ form.addEventListener('submit', function (e) {
         .then((result) => {
             if (result != "Wrong Email Or Password...") {
                 alert("Login successful!"); 
-                window.location.href = "../Team/index.html";
+                window.location.href = "Team/index.html";
                 localStorage.setItem("expecto Patronum", `MSP ${result["token"]}`);
             }
             else {

@@ -12,6 +12,7 @@ body {
 
 /* بنستخدمها عشان تخلى الكلام كله يكون فى نفس الصف ويكون مظبوط */
 .container {
+    width: 100%;
     padding-left: 15px;
     padding-right: 15px;
     margin-left: auto;
@@ -50,7 +51,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0px 70px;
+    // padding: 0px 70px;
 }
 
 .Page .team h2 {
@@ -116,7 +117,7 @@ body {
 
 /* start cards */
 .cards {
-    padding-top: 50px;
+    padding-top: 10px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -177,6 +178,7 @@ body {
 
 .cards .card1 .icon {
     display: flex;
+    justify-content: center;
 }
 
 .cards .card1 .text h5 {
@@ -510,7 +512,7 @@ button:hover {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    // transform:scale(0) translate(-50%, -50%);
     width: 850px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
     background: #fff;
@@ -527,6 +529,8 @@ button:hover {
     visibility: visible;
     opacity: 1;
     transform: 0.5s;
+    transform: scale(0.8) translate(-62%, -62%);
+    // transform: scale(0);
 }
 
 /* End ADD */
@@ -536,7 +540,7 @@ button:hover {
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
     width: 850px;
     box-shadow: 0 5px 30px rgba(0, 0, 0, .30);
     background: #fff;
@@ -552,6 +556,8 @@ button:hover {
     visibility: visible;
     opacity: 1;
     transform: 0.5s;
+    transform: scale(0.8) translate(-62%, -62%);
+
 }
 
 /* end Edit */
@@ -559,6 +565,7 @@ button:hover {
 
 /* start Resposive */
 @media (max-width: 767px) {
+
     
 .Page .team {
     padding: 100px 0px 0px;

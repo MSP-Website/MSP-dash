@@ -6,7 +6,8 @@ section {
         font-weight: 600;
         margin-bottom: 2%;
     }
-    .sponsors{
+
+    .sponsors {
         margin-top: 5%;
         margin-bottom: 5%;
     }
@@ -26,6 +27,7 @@ section {
             height: 15.575vh;
 
             &.btn-add-img {
+                cursor: pointer !important;
                 font-weight: 600;
                 border: 1px dotted var(--purple-accent);
 
@@ -78,7 +80,47 @@ section {
                     font-weight: 600;
                     backdrop-filter: blur(13px);
                     background-color: #7b1d8042;
+
+                    &:hover {
+                        cursor: pointer !important;
+                    }
+
+                    &.edit-icon {
+                        cursor: pointer;
+                        width: 20px;
+                        width: 34px;
+                        top: 0px;
+                        opacity: 0;
+                        right: 0px;
+                        border-radius: 2px;
+                        z-index: 8;
+                        bottom: auto;
+
+                        img {
+                            filter: brightness(1) !important;
+                            cursor: pointer !important;
+                            width: 9px;
+                        }
+                    }
+
+                    &.zoom-icon {
+                        width: 34px;
+                        top: 0px;
+                        opacity: 0;
+                        cursor: pointer;
+                        left: 0px;
+                        border-radius: 2px;
+                        z-index: 8;
+                        bottom: auto;
+
+                        img {
+                            filter: brightness(1) !important;
+                            cursor: pointer !important;
+                            width: 9px;
+                        }
+                    }
                 }
+
 
                 &:hover {
                     span {
