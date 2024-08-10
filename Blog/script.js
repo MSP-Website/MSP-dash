@@ -49,29 +49,33 @@ function fetchBlogs() {
     }).then((data) => {
         const blogs = data.results;
         renderBlogs(blogs);
+        updatePaginationButtons(blogs.length);
     }).catch((error) => {
         console.error('There was a problem with the fetch operation:', error);
     });
 }
-let blogCard = document.createElement('div');
-blogCard.innerHTML = `
- <div class="card-add" id="searchButton">
-                        <i id="magnifying-glass" class="fa-solid fa-plus" style="color: #080808;"
-                            onclick="toggle()"></i>
-                        <h5>Add New dish</h5>
-                    </div>
-`
-let blogContainer = document.querySelector('.blogs');
+
 function renderBlogs(blogs) {
+    const blogContainer = document.querySelector('.blogs');
+    blogContainer.innerHTML = '';  // Clear previous content
+
+    // Add "Add New Blog" card
+    let addCardHTML = `
+        <div class="card-add" id="searchButton" onclick="toggle()">
+            <i id="magnifying-glass" class="fa-solid fa-plus" style="color: #080808;"></i>
+            <h5>Add New Blog</h5>
+        </div>
+    `;
+    blogContainer.innerHTML += addCardHTML;
+
+    // Render each blog
     blogs.forEach((item) => {
-        
-        blogCard.classList.add("cards");
-        blogCard.innerHTML += `   
+        const cardHTML = `   
             <div class="card1">
                 <div class="image">
                     <img src="${item.image}" alt="blog image">
                     <div class="text">
-                        <p>${item.name.length>=7 ? `${item.name.slice(0,7)}...` : item.name}</p>
+                        <p>${item.name.length >= 7 ? `${item.name.slice(0, 7)}...` : item.name}</p>
                         <p>${new Date(item.createdAt).toLocaleDateString()}</p>
                         <p class="delet" onclick="deleteBlog('${item._id}')">Delete</p>
                         <div class="icon" onclick="fillEditForm('${item._id}')">
@@ -82,9 +86,17 @@ function renderBlogs(blogs) {
                 </div>
             </div>
         `;
+        blogContainer.innerHTML += cardHTML;
     });
 }
-blogContainer.appendChild(blogCard);
+
+function updatePaginationButtons(blogCount) {
+    // Show/Hide Previous Button
+    document.getElementById('previousteam').style.display = currentPage > 1 ? 'block' : 'none';
+
+    // Show/Hide Next Button
+    document.getElementById('nextteam').style.display = blogCount === limit ? 'block' : 'none';
+}
 
 function addBlog() {
     const AddedUrl = `${api_url}/dashboard/blogs/add`;
@@ -98,6 +110,7 @@ function addBlog() {
     formData.append('linktree', document.getElementById('add-linktree').value);
     formData.append('description', document.getElementById('add-description').value);
     formData.append('image', document.getElementById('add-image').files[0]);
+
     fetch(AddedUrl, {
         method: 'POST',
         headers: {
@@ -107,8 +120,8 @@ function addBlog() {
     }).then((res) => res.json())
         .then((data) => {
             console.log(data);
-            // location.reload();
-            fetchBlogs();
+            toggle();  // Close the form
+            fetchBlogs();  // Refresh blogs
         }).catch((error) => console.error('Error:', error));
 }
 
@@ -131,12 +144,13 @@ function fillEditForm(blogId) {
             document.getElementById('edit-twitter').value = blog.twitter;
             document.getElementById('edit-linktree').value = blog.linktree;
             document.getElementById('edit-description').value = blog.description;
+            document.getElementById('edit-blogId').value = blogId; // Store blogId in hidden input
             EditToggle();
         }).catch((error) => console.error('Error:', error));
 }
 
 function updateBlog() {
-    const blogId = document.querySelector('.blogs .card-form .delet').getAttribute('onclick').split("'")[1];
+    const blogId = document.getElementById('edit-blogId').value; // Get the blogId from the hidden input
     const updateUrl = `${api_url}/dashboard/blogs/edit/${blogId}`;
     const formData = new FormData();
     formData.append('name', document.getElementById('edit-name').value);
@@ -147,7 +161,12 @@ function updateBlog() {
     formData.append('twitter', document.getElementById('edit-twitter').value);
     formData.append('linktree', document.getElementById('edit-linktree').value);
     formData.append('description', document.getElementById('edit-description').value);
-    formData.append('image', document.getElementById('edit-image').files[0]);
+    
+    // Conditionally append image if it's present
+    const imageFile = document.getElementById('edit-image').files[0];
+    if (imageFile) {
+        formData.append('image', imageFile);
+    }
 
     fetch(updateUrl, {
         method: 'PATCH',
@@ -158,7 +177,8 @@ function updateBlog() {
     }).then((res) => res.json())
         .then((data) => {
             console.log(data);
-            // location.reload();
+            EditToggle();  // Close the edit form
+            fetchBlogs();  // Refresh blogs
         }).catch((error) => console.error('Error:', error));
 }
 
@@ -172,8 +192,9 @@ function deleteBlog(blogId) {
     }).then((res) => res.json())
         .then((data) => {
             console.log(data);
-            location.reload();
+            fetchBlogs();  // Refresh blogs after deletion
         }).catch((error) => console.error('Error:', error));
 }
 
+// Initial fetch
 fetchBlogs();

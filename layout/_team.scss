@@ -117,7 +117,7 @@ body {
 
 /* start cards */
 .cards {
-    padding-top: 10px;
+    padding-top: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -577,7 +577,7 @@ button:hover {
     #popup,
     #popupp {
         width: 380px;
-        transform: translate(-50%, -50%) scale(0.6);
+        transform: translate(-50%, -46%) scale(0.8) !important;
     }
 
     .inputs form input,
@@ -597,7 +597,7 @@ button:hover {
     }
 
     .cards .card-add {
-        height: 300px;
+        height: 306px;
     }
 }
 

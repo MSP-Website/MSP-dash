@@ -3,7 +3,23 @@
 }
 .card-add{
     padding: 0px !important;
+    border: 1px dashed #7B1D80;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 45px 20px;
+    width: 137px;
+    height: 54vh;
 }
 .cards{
+    padding-top: 20px !important;
     justify-content: flex-start !important;
+}
+@media screen and (max-width:767px) {
+    .cards{
+        justify-content: center !important;
+    }
 }
