@@ -139,3 +139,21 @@ document.getElementById('nextteam').addEventListener('click', function () {
 });
 
 document.addEventListener("DOMContentLoaded", fetchAndDisplaySponsors);
+
+function handleFileUploadDisplay(inputElement, textElement) {
+    if (inputElement && textElement) {
+        inputElement.addEventListener('change', () => {
+            const fileName = inputElement.value.split('\\').pop(); // Get the file name
+            textElement.innerHTML = `${fileName.length > 21 ? fileName.slice(0, 21) + '...' : fileName}`;
+        });
+    }
+}
+
+// Handle file upload display for Add New Member popup
+const btnUpload = document.querySelector("#image-upload");
+// btnUpload.style.color = "#7B1D80";
+const txtFile = document.querySelector("#txtFile");
+txtFile.style.color = "#7B1D80";
+
+handleFileUploadDisplay(btnUpload, txtFile);
+

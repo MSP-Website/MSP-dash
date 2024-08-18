@@ -683,6 +683,10 @@ body {
   color: #5d0961;
 }
 
+.cards .card1 .text .icon:hover .edits {
+  color: #fff;
+}
+
 .card1:focus {
   outline: none;
 }
@@ -977,6 +981,18 @@ button:hover {
 }
 
 /* end Edit */
+#Team .cards .card-add {
+  border: 1px dashed #7B1D80;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 45px 20px;
+  width: 121.33px;
+}
+
 /* start Resposive */
 @media (max-width: 767px) {
   .Page .team {
