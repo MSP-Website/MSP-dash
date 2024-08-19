@@ -18,7 +18,7 @@ form.addEventListener('submit', function (e) {
         redirect: "follow"
     };
 
-    fetch("https://164.92.244.59:3000/admin/login", requestOptions)
+    fetch("http://164.92.244.59:3000/admin/login", requestOptions)
         .then((response) => response.json())
         .then((result) => {
             if (result != "Wrong Email Or Password...") {
