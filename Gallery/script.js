@@ -56,7 +56,7 @@ async function getDataGalleryAll(pageNum) {
   const myHeaders = new Headers();
   myHeaders.append("Authorization", localStorage.getItem("expecto Patronum"));
   var res = await fetch(
-    `http://164.92.244.59:3000/dashboard/gallery/get?page=${
+    `https://api.msp-alazhar.tech/dashboard/gallery/get?page=${
       pageNum || 1
     }&limit=15`,
     {
@@ -129,7 +129,7 @@ async function getDataGalleryEvents(pageNum) {
   const myHeaders = new Headers();
   myHeaders.append("Authorization", localStorage.getItem("expecto Patronum"));
   let res = await fetch(
-    `http://164.92.244.59:3000/dashboard/gallery/getEvents?page=${
+    `https://api.msp-alazhar.tech/dashboard/gallery/getEvents?page=${
       pageNum || 1
     }&limit=15`,
     {
@@ -199,7 +199,7 @@ async function getDataGallerySessions(pageNum) {
   const myHeaders = new Headers();
   myHeaders.append("Authorization", localStorage.getItem("expecto Patronum"));
   let res = await fetch(
-    `http://164.92.244.59:3000/dashboard/gallery/getSessions?page=${
+    `https://api.msp-alazhar.tech/dashboard/gallery/getSessions?page=${
       pageNum || 1
     }&limit=15`,
     {
@@ -285,7 +285,7 @@ function postGallery() {
     redirect: "follow",
   };
 
-  fetch("http://164.92.244.59:3000/dashboard/gallery/add", requestOptions)
+  fetch("https://api.msp-alazhar.tech/dashboard/gallery/add", requestOptions)
     .then((response) => response.text())
     .then((result) => {
       if (
@@ -341,7 +341,7 @@ async function DeleteFromGallery(id) {
   };
 
   let res = await fetch(
-    `http://164.92.244.59:3000/dashboard/gallery/delete/${id}`,
+    `https://api.msp-alazhar.tech/dashboard/gallery/delete/${id}`,
     requestOptions
   );
   let data = await res.text();
@@ -433,7 +433,7 @@ function apiEdit() {
   };
 
   fetch(
-    `http://164.92.244.59:3000/dashboard/gallery/edit/${localStorage.getItem(
+    `https://api.msp-alazhar.tech/dashboard/gallery/edit/${localStorage.getItem(
       "imageId"
     )}`,
     requestOptions
@@ -473,7 +473,7 @@ function getImageById(imageId) {
   };
 
   fetch(
-    `http://164.92.244.59:3000/dashboard/gallery/getById/${imageId}`,
+    `https://api.msp-alazhar.tech/dashboard/gallery/getById/${imageId}`,
     requestOptions
   )
     .then((response) => response.json())

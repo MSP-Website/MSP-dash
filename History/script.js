@@ -1,4 +1,4 @@
-const api_url = 'http://164.92.244.59:3000';
+const api_url = 'https://api.msp-alazhar.tech';
 
 let currentPage = 1;
 const limit = 15;

@@ -43,7 +43,7 @@ function getTeam(page = 1) {
         redirect: "follow"
     };
 
-    fetch(`http://164.92.244.59:3000/dashboard/teams/get?page=${page}&limit=${limit}`, requestOptions)
+    fetch(`https://api.msp-alazhar.tech/dashboard/teams/get?page=${page}&limit=${limit}`, requestOptions)
         .then(response => response.json())
         .then(data => {
             const teamCardsContainer = document.getElementById('teams-cards');
@@ -117,7 +117,7 @@ function deleteCard(cardId) {
         redirect: "follow"
     };
 
-    fetch(`http://164.92.244.59:3000/dashboard/teams/delete/${cardId}`, requestOptions)
+    fetch(`https://api.msp-alazhar.tech/dashboard/teams/delete/${cardId}`, requestOptions)
         .then(response => response.text())
         .then(result => {
             console.log(result);
@@ -158,7 +158,7 @@ document.getElementById('add').addEventListener('click', function () {
         redirect: "follow"
     };
 
-    fetch("http://164.92.244.59:3000/dashboard/teams/add", requestOptions)
+    fetch("https://api.msp-alazhar.tech/dashboard/teams/add", requestOptions)
         .then(response => response.text())
         .then(result => {
             console.log(result);
@@ -195,11 +195,11 @@ document.getElementById('addd').addEventListener('click', function (event) {
     const requestOptions = {
         method: 'PATCH',
         headers: myHeaders,
+        redirect: 'follow',
         body: formData,
-        redirect: 'follow'
     };
 
-    fetch(`http://164.92.244.59:3000/dashboard/teams/edit/${id}`, requestOptions)
+    fetch(`https://api.msp-alazhar.tech/dashboard/teams/edit/${id}`, requestOptions)
         .then(response => response.text())
         .then(result => {
             console.log(result);

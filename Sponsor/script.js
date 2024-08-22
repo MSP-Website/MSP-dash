@@ -9,7 +9,7 @@ function toggleAddForm() {
     popup.classList.toggle('active');
 }
 async function fetchAndDisplaySponsors() {
-    const apiURL = "http://164.92.244.59:3000/dashboard/sponsors/get?page=1&limit=1000";
+    const apiURL = "https://api.msp-alazhar.tech/dashboard/sponsors/get?page=1&limit=1000";
     try {
         const response = await fetch(apiURL, {
             method: 'GET',
@@ -74,7 +74,7 @@ function addNewCard() {
 async function deleteSponsor(event) {
     const sponsorId = event.target.getAttribute('data-id');
         try {
-            const response = await fetch(`http://164.92.244.59:3000/dashboard/sponsors/delete/${sponsorId}`, {
+            const response = await fetch(`https://api.msp-alazhar.tech/dashboard/sponsors/delete/${sponsorId}`, {
                 method: 'DELETE',
                 headers: {
                     'Authorization': `${localStorage.getItem('expecto Patronum')}`,
@@ -100,7 +100,7 @@ document.getElementById('addSponsorForm').addEventListener('submit', async funct
         formData.append('image', imageUpload);
 
         try {
-            const response = await fetch('http://164.92.244.59:3000/dashboard/sponsors/add', {
+            const response = await fetch('https://api.msp-alazhar.tech/dashboard/sponsors/add', {
                 method: 'POST',
                 headers: {
                     'Authorization': `${localStorage.getItem('expecto Patronum')}`,
